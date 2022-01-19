@@ -1,0 +1,32 @@
+td {
+    vertical-align: middle !important;
+}
+
+.note {
+    margin-top: 5px;
+    height: 60px;
+}
+
+.icon {
+    font-size: 2em;
+}
+
+.iconButton {
+    font-size: 1.3em;
+}
+
+.icon-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center;
+}
+
+.table-button {
+    font-size: 2em;
+    background-color: inherit;
+    border: none;
+}
+
+.btn-group {
+    padding: 0;
+}

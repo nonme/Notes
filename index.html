@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>Notes</title>
+</head>
+
+<body>
+    <section class="container">
+        <header class="text-center">
+            <h1>Notes</h1>
+        </header>
+        <section class="container-fluid" id="notes">
+            <header class="row bg-dark text-white rounded">
+                <section class="col-1"></section>
+                <section class="col-2">Name</section>
+                <section class="col-2">Created</section>
+                <section class="col-1">Category</section>
+                <section class="col-3">Content</section>
+                <section class="col">Dates</section>
+                <section class="col text-center">Controls</section>
+            </header>
+        </section>
+        <section class="text-right mt-1">
+            <button class="btn btn-success">Create Note</button>
+        </section>
+    </section>
+
+    <section class="container ">
+
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+    <script src="./js/script.js "></script>
+    <script>
+        predefineNotes();
+        displayNotes();
+        addEvents();
+    </script>
+</body>
+
+</html>
