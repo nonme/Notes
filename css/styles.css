@@ -3,7 +3,6 @@ td {
 }
 
 .note {
-    margin-top: 5px;
     height: 60px;
 }
 
@@ -12,7 +11,7 @@ td {
 }
 
 .iconButton {
-    font-size: 1.3em;
+    font-size: 1.4em;
 }
 
 .icon-wrapper {
@@ -21,12 +20,17 @@ td {
     text-align: center;
 }
 
-.table-button {
-    font-size: 2em;
-    background-color: inherit;
-    border: none;
-}
-
 .btn-group {
     padding: 0;
+}
+
+.bg-image {
+    background-image: url('../img/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+}
+
+.container {
+    min-height: 95vh;
 }
