@@ -58,9 +58,13 @@ function toggleTable() {
     if (currentTable == Table.Active) {
         currentTable = Table.Archived;
         createNotes(archivedNotes);
+
+        document.getElementById("tableHeaderName").textContent = "Archive";
     } else {
         currentTable = Table.Active;
         createNotes(currentNotes);
+
+        document.getElementById("tableHeaderName").textContent = "Notes";
     }
 
 }
@@ -159,7 +163,10 @@ function removeNote(note) {
     notesContainer.removeChild(noteToRemove);
 
     let id = note.note.id;
-    delete currentNotes[id];
+    if (currentTable == Table.Active)
+        delete currentNotes[id];
+    else
+        delete archivedNotes[id];
 
     updateTotalNotes();
 }
@@ -170,10 +177,13 @@ function archiveNote(note) {
     notesContainer.removeChild(noteToRemove);
 
     let id = note.note.id;
-    archivedNotes[id] = note.note;
-    delete currentNotes[id];
-    console.log(archivedNotes[id]);
-
+    if (currentTable == Table.Active) {
+        archivedNotes[id] = note.note;
+        delete currentNotes[id];
+    } else {
+        currentNotes[id] = note.note;
+        delete archivedNotes[id];
+    }
     updateTotalNotes();
 }
 
