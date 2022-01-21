@@ -14,30 +14,101 @@
     <title>Notes</title>
 </head>
 
-<body>
-    <section class="container">
-        <header class="text-center">
-            <h1>Notes</h1>
+<body class="bg-image">
+    <section class="container bg-light bg-gradient rounded mt-4 pb-3">
+        <header class="container-fluid p-3">
+            <section class="row bg-dark text-white text-center rounded justify-content-center p-3">
+                <h1>Notes</h1>
+            </section>
         </header>
         <section class="container-fluid" id="notes">
-            <header class="row bg-dark text-white rounded">
-                <section class="col-1"></section>
+            <header class="row bg-dark text-white align-items-center" id="notesHeader">
+                <section class="col"></section>
                 <section class="col-2">Name</section>
-                <section class="col-2">Created</section>
-                <section class="col-1">Category</section>
+                <section class="col-1">Created</section>
+                <section class="col-2 text-center">Category</section>
                 <section class="col-3">Content</section>
-                <section class="col">Dates</section>
-                <section class="col text-center">Controls</section>
+                <section class="col-2">Dates</section>
+                <section class="col text-right">
+                    <button class="btn btn-dark p-1 w-100" id="toggleTableButton">
+                        <i class="iconButton bi-archive"></i>
+                    </button>
+                </section>
             </header>
         </section>
-        <section class="text-right mt-1">
-            <button class="btn btn-success">Create Note</button>
+        <section class="text-right mt-3 mb-3 col">
+            <button class="btn btn-dark shadow-lg" id="createNoteButton">Create Note</button>
+        </section>
+        <section class="container-fluid" id="totalNotes">
+            <header class="row bg-dark text-white" id="totalHeader">
+                <section class="col-auto" id="iconHolder"></section>
+                <section class="col-5 text-center">Note Category</section>
+                <section class="col-2">Active</section>
+                <section class="col-2">Archived</section>
+            </header>
         </section>
     </section>
 
-    <section class="container ">
-
-    </section>
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content bg-dark">
+                <div class="modal-header bg-dark">
+                    <h5 class="modal-title text-white" id="editModalLabel">Edit</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="text-white">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body bg-white">
+                    <form>
+                        <div class="form-group row">
+                            <label for="name" class="col-2 col-form-label">Name</label>
+                            <input type="text" class="col-9 form-control" id="name">
+                        </div>
+                        <div class="form-group row">
+                            <label for="created" class="col-2 col-form-label">Created</label>
+                            <input type="text" class="col-9 form-control" id="created">
+                        </div>
+                        <div class="form-group row">
+                            <label for="category" class="col-2 col-form-label">Category</label>
+                            <select class="col-9 custom-select" id="category">
+                                <option value="Task" selected>Task</option>
+                                <option value="Idea">Idea</option>
+                                <option value="Random Thought">Random Thought</option>
+                                <option value="Quote">Quote</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label for="content" class="col-2 col-form-label">Content</label>
+                            <textarea class="col-9 form-control" id="content"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer bg-white">
+                    <button type="button" class="btn btn-dark col-2" id="saveEditButton">Save</button>
+                    <button type="button" class="btn btn-secondary col-2" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="removeModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content bg-dark">
+                <div class="modal-header bg-dark">
+                    <h5 class="modal-title text-white">Remove note?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" class="text-white">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body bg-white">
+                    <p>Are you sure?</p>
+                </div>
+                <div class="modal-footer bg-white">
+                    <button type="button" class="btn btn-danger" id="removeNoteButton">Remove</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
@@ -45,8 +116,7 @@
     <script src="./js/script.js "></script>
     <script>
         predefineNotes();
-        displayNotes();
-        addEvents();
+        createPage();
     </script>
 </body>
 
